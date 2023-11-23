@@ -23,11 +23,11 @@
             "tsConfig": "tsconfig.app.json",
             "assets": [
               "docs/favicon.ico",
-              "docs/assets"
+              "docs/assets/img"
             ],
             "styles": [
               "docs/custom-theme.scss",
-              "docs/styles.css"
+              "docs/styles.91af74abc15b4404.css"
             ],
             "scripts": []
           },
