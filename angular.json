@@ -15,8 +15,8 @@
           "options": {
             "baseHref": "docs/",
             "outputPath": "docs",
-            "index": "src/index.html",
-            "main": "src/main.ts",
+            "index": "docs/index.html",
+            "main": "docs/main.ts",
             "polyfills": [
               "zone.js"
             ],
