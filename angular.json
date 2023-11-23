@@ -13,10 +13,10 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "baseHref": "docs/",
+            "baseHref": "/",
             "outputPath": "docs",
-            "index": "docs/index.html",
-            "main": "docs/main.ts",
+            "index": "src/index.html",
+            "main": "src/main.ts",
             "polyfills": [
               "zone.js"
             ],
