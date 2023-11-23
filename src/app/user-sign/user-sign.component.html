@@ -1,0 +1,63 @@
+<div class="animation-container" *ngIf="startAnimation" [@fadeInOut]>
+   <h1>MyAppRome</h1>
+</div>
+
+<div class="container" [@fadeInOut]>
+   <div class="form-box" *ngIf="!startAnimation">
+      <div class="wrapper">
+         <div class="card-switch">
+            <label class="switch">
+               <input type="checkbox" class="toggle" (change)="onReadChecboxSlider($event)">
+               <span class="slider"></span>
+               <span class="card-side"></span>
+               <div class="flip-card__inner">
+
+                  <div class="flip-card__front">
+                     <div class="title">Login</div>
+                     <form class="flip-card__form" action="">
+
+                        <input [ngStyle]="{ 'border-color': borderLogMailError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLogMailError}"  class="flip-card__input" name="email" placeholder="Email" type="email" autocomplete="off" (change)="onReadMailLogin($event)">
+                        <input [ngStyle]="{ 'border-color': borderLogPsswError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLogPsswError}"  class="flip-card__input" name="password" placeholder="Password" type="password" autocomplete="off" (change)="onReadPasswordLogin($event)">                         
+                        <button class="flip-card__btn" (click)="onClickLogin()">Entra</button>
+                        <span class="login-error" *ngIf="errorLogin" [@fadeInOut]>{{ errorMsgLogin }}</span>
+                     </form>
+                     <div class="box-hr">
+                        <div class="hr"></div>
+                        <span>Oppure</span>
+                        <div class="hr"></div>
+                     </div>
+                     <label class="box-google">
+                        <img src="/assets/img/google.png">
+                        <button class="google-btn">Accedi con google</button>
+                        <!--
+                           <asl-google-signin-button type="standard" size="large" width="350" shape="square"></asl-google-signin-button>
+                        -->
+                     </label>
+                  </div>
+
+                  <div class="flip-card__back">
+                     <div class="title">Registrati</div>
+                     <form class="flip-card__form" action="">
+                        <input [ngStyle]="{ 'border-color': borderNameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderNameError}"  class="flip-card__input" placeholder="Nome" type="text" autocomplete="off" (change)="onReadNome($event)">
+                        <input [ngStyle]="{ 'border-color': borderLastNameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLastNameError}"  class="flip-card__input" placeholder="Cognome" type="text" autocomplete="off" (change)="onReadCognome($event)">
+                        <input [ngStyle]="{ 'border-color': borderAgeError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderAgeError}"  class="flip-card__input" placeholder="Età" type="number" autocomplete="off"  (change)="onReadEta($event)">
+                        <input [ngStyle]="{ 'border-color': borderUsernameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderUsernameError}"  class="flip-card__input" placeholder="Username" type="text" autocomplete="off" (change)="onReadUsername($event)">
+                        <span class="error-register" *ngIf="usernameUnvalid">{{ msgUsernameUnvalid }}</span>
+                        <input [ngStyle]="{ 'border-color': borderMailError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderMailError}"  class="flip-card__input" name="email" placeholder="Email" type="email" autocomplete="off" (change)="onReadRegisterMail($event)">
+                        <span class="error-register" *ngIf="mailUnvalid">{{ msgMailUnvalid }}</span>
+                        <input [ngStyle]="{ 'border-color': borderPsswError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderPsswError}"  class="flip-card__input" name="password" placeholder="Password" type="password" autocomplete="off" (change)="onReadRegisterPassword($event)">
+                        <span class="error-register" *ngIf="psswUnvalid">{{ msgPsswUnvalid }}</span>
+                        <div class="box-btn">
+                           <button class="flip-card__btn" (click)="onClickRegister()">Registrati</button>
+                           <span *ngIf="errorRegister" class="error-register" [@fadeInOut]>
+                              {{ errorMessageRegister }}
+                           </span>
+                        </div> 
+                     </form>
+                  </div>
+               </div>
+            </label>
+         </div>   
+      </div>
+   </div>
+</div>

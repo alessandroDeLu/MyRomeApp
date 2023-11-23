@@ -1,0 +1,70 @@
+<navbar-component></navbar-component>
+
+<div class="container" [@fadeInOut]>
+
+    <div class="title-eat-and-drink">
+        <div class="back-icon">
+            <span (click)="onClickBackPage()">➔</span>
+        </div>
+        <h1 style="margin-bottom: 30px;">OTTIMO!</h1>
+        <img src="/assets/img/emoticon-help-you.svg" style="width: 70%; transform: translateY(-32%);">
+    </div>
+
+    <div class="filter">
+        <h1>Personalizza la tua ricerca</h1>
+
+        <div class="budget">
+            <h3>
+                Budget*
+                <span style="color: #174220;">{{ budgetValue }}€</span>
+            </h3>
+            
+            <mat-slider min="0" max="200" step="5" discrete (input)="onSliderChange($event)" color="accent">
+                <input matSliderThumb>
+            </mat-slider>
+        </div>
+
+        <div class="zona">
+            <h3>Zona  <span class="facoltativo">(facoltativo)</span></h3>
+
+            <mat-chip-listbox aria-label="Fish selection" style="font-family: fantasy!important; font-weight: 100;">
+                <mat-chip-option>Roma nord</mat-chip-option>
+                <mat-chip-option>Roma Est</mat-chip-option>
+                <mat-chip-option>Roma Sud</mat-chip-option>
+                <mat-chip-option>Roma Ovest</mat-chip-option>
+                <mat-chip-option>Roma centro</mat-chip-option>
+              </mat-chip-listbox>
+        </div>
+
+        <div class="orario-pasto">
+            <h3>Orario pasto <span class="facoltativo">(facoltativo)</span></h3>
+
+            <mat-radio-group aria-label="Select an option">
+                <mat-radio-button value="1" style="padding-left: 0px!important;">Colazione</mat-radio-button>
+                <mat-radio-button value="2">Pranzo</mat-radio-button>
+                <mat-radio-button value="3">Cena</mat-radio-button>
+                <mat-radio-button value="4">Post serata</mat-radio-button>
+            </mat-radio-group>
+        </div>
+
+        <div class="specialita">
+            <h3>Specialità <span class="facoltativo">(facoltativo)</span></h3>
+
+            <section class="section-type">
+                <mat-checkbox class="example-margin" [disabled]="disabledMeat" (click)="onCheckMeat()">Carne</mat-checkbox>
+                <mat-checkbox class="example-margin" [disabled]="disabledFish" (click)="onCheckFish()">Pesce</mat-checkbox>
+                <mat-checkbox class="example-margin" [disabled]="disabledPizza" (click)="onCheckPizza()">Pizza</mat-checkbox>
+                <mat-checkbox class="example-margin" [disabled]="disabledAll" (click)="onCheckAll()">Misto</mat-checkbox>
+            </section>
+        </div>
+
+        <div style="width: 100%; display: flex; justify-content: center;">
+            <button class="filter-btn">Vai</button>
+        </div>
+
+    </div>
+
+</div>
+
+<footer-component></footer-component>
+

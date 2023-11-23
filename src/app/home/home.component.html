@@ -1,0 +1,54 @@
+<div class="container" [ngStyle]="{ 'background': sideBarOpened ? 'rgba(255, 250, 230, .7)': '#fffae6'}" [@fadeInOut]>    
+    <navbar-component (mandaDatiEventFromNavbar)="onRiceviDatiFromNavbar($event)"></navbar-component>
+
+
+    <!-- SCELTA CITTA -->
+    <div class="center-content" *ngIf="homeContent && !cityClicked" [@fadeInOut]>
+        <h1 class="title-home">
+            <span style="font-style: italic; font-weight: 100; font-size: 32px;">Benvenuto {{ nameUserLogged }}</span>
+            <span>DOVE TI TROVI?</span>
+        </h1>
+
+        <div class="box-city">
+            <img src="/assets/img/napoli.png">
+            <img src="/assets/img/roma.png" (click)="onClickRoma()">
+            <img src="/assets/img/milano.png">
+        </div>
+        
+    </div>
+
+    <!-- DECIDI COSA FARE -->
+    <div class="box-cosa-fare" *ngIf="cosaFare && cityClicked" [@fadeInOut]>
+        <div class="title-box-cosa-fare">
+            <div class="back">
+                <span class="back-icon" (click)="onClickBackToFirstPage()">➔</span>
+            </div>
+            <h1 class="title-cosa-fare">Cosa Vuoi Fare?</h1>
+        </div>
+
+        <div class="scelta-cosa-fare">
+            <button type="submit" class="btn-cosa-fare" (click)="onClickMangiareBere()">Mangiare e Bere</button>
+            <button type="submit" class="btn-cosa-fare" (click)="onClickPartyAttivita()">Party e attività</button>
+        </div>
+
+        <div class="mappa-box"></div>
+    </div>
+
+    <!-- FORM AIUTACI A MIGLIORARE L'APP -->
+    <div class="form-help-us" *ngIf="!homeContent && !cityClicked && helpUs" [@fadeInOut]>
+        <h1 style="font-weight: normal!Important;">Ciao {{ usernameUserLogged }}</h1>
+        <h3 class="box-info">Siamo costantemente impegnati a migliorare la nostra app e rendere l'esperienza degli utenti ancora migliore. 
+            La tua opinione è fondamentale per noi, e apprezziamo ogni feedback, suggerimento o commento che desideri condividere.
+            Se hai idee per migliorare l'app, suggerimenti per nuove funzionalità o semplicemente desideri condividere la tua esperienza,
+            ti preghiamo di farlo utilizzando la seguente area di testo. 
+            Scrivi liberamente ciò che pensi e condividi le tue opinioni con noi.
+        </h3>
+        <textarea (change)="onReadTextArea($event)"></textarea>
+        <button type="submit" class="btn" (click)="onSendHelpUsMessage()">Invia</button>
+        <span class="error-textarea" *ngIf="textAreaError" [@fadeInOut]>{{ errorMsgTextArea }}</span>
+        <span class="message-sended" *ngIf="messageSended" [@fadeInOut]>&#9989; {{ confirmMessage }}</span>
+        <mat-progress-bar mode="indeterminate" *ngIf="caricaInvio"></mat-progress-bar>
+    </div>
+ 
+    <footer-component (mandaDatiEventFromFooter)="onRiceviDatiFromFooter($event)"></footer-component>
+</div>

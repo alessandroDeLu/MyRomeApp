@@ -1,0 +1,54 @@
+<navbar-component></navbar-component>
+
+<div class="container" [@fadeInOut]>
+
+    <div class="box-profile">
+        <div class="top-background"></div>
+
+        <div class="box-user-img">
+            <div class="user-img">{{ inizialiUtente }}</div>
+        </div>
+
+        <div class="form-update">
+            <label>
+                <span>Indirizzo email</span>
+                <span style="color: #521e1e;">{{ myMail }}</span>
+            </label>
+
+            <label>
+                <span>Modifica username</span>
+                <div class="input-box">
+                    <input (change)="onReadNewUsername($event)" [ngStyle]="{'opacity' : disabledUsername ? '.6' : '1', 'border-bottom': !disabledUsername ? '1px solid black' : 'none'}" type="text" [disabled]="disabledUsername" [(ngModel)]="valueUsername">
+                    <div class="icon">
+                        <span *ngIf="disabledUsername" (click)="onClickAbleUpdateUsername()">&#9998;</span>
+                        <span *ngIf="!disabledUsername" style="color: #174220;" (click)="onClickSaveNewUsername()">✔</span>
+                        <span class="x" *ngIf="!disabledUsername" (click)="onClickDisableUpdateUsername()">&#x2715;</span>
+                    </div>
+                </div>
+            </label>
+
+            <label>
+                <span>Modifica password</span>
+                <div class="input-box">
+                    <input (change)="onReadNewPassword($event)" [ngStyle]="{'opacity' : disabledPssw ? '.6' : '1', 'border-bottom': !disabledPssw ? '1px solid black' : 'none'}" type="password" [disabled]="disabledPssw" [(ngModel)]="valuePssw">
+                    <div class="icon">
+                        <span *ngIf="disabledPssw" (click)="onClickAbleUpdatePassword()">&#9998;</span>
+                        <span *ngIf="!disabledPssw" style="color: #174220;" (click)="onClickSaveNewPassword()">✔</span>
+                        <span class="x" *ngIf="!disabledPssw" (click)="onClickDisableUpdatePassword()">&#x2715;</span>
+                    </div>
+                </div>
+            </label>
+
+            <label style="align-items: center;">
+                <button class="update-btn" (click)="onClickUpdate()">{{ buttonName }}</button>
+                <span *ngIf="unchangedFields" class="error-message" [@fadeInOut]><span style="font-size: 15px;">❌</span> {{ errorMsg }}</span>
+                <span *ngIf="usernameChanged || psswChanged" class="confirm-message" [@fadeInOut]>&#9989; {{ confirmMsg }}</span>
+            </label>
+        </div>
+    </div>
+
+    <mat-progress-bar mode="indeterminate" *ngIf="caricaInvio" [@fadeInOut]></mat-progress-bar>
+
+</div>
+
+<footer-component></footer-component>

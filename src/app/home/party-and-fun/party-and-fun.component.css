@@ -1,0 +1,195 @@
+.container{
+    /*height: 142vh;*/
+    background-color: #fffae6;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 18%;
+}
+
+h1,h2,h3,h4{
+    color: #521e1e;
+    font-family: fantasy;
+    margin: 0;
+}
+
+.title-eat-and-drink{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: 35vh;
+}
+
+.title-eat-and-drink h1 {
+    font-size: 35px;
+}
+
+.title-eat-and-drink h2{
+    font-size: 30px;
+}
+
+.back-icon{
+    font-size: 38px;
+    transform: rotate(180deg);
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    padding-right: 10px;
+}
+
+.emoticon{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.filter{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: column;
+    height: fit-content;
+}
+
+.filter h1{
+    font-size: 29px;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.budget{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 1px solid #174220;
+    border-left: none;
+    border-right: none;
+    padding: 15px 10px 15px 24px;
+    gap: 5px;
+}
+
+.budget h3{
+    font-size: 27px;
+    font-weight: lighter;
+    display: flex;
+    width: 100%;
+    gap: 40px;
+}
+
+mat-slider {
+    width: 80%;
+}
+
+.mat-mdc-slider.mat-accent {
+    --mdc-slider-handle-color: #174220;
+    --mdc-slider-focus-handle-color: #174220;
+    --mdc-slider-hover-handle-color: #174220;
+    --mdc-slider-active-track-color: #174220;
+    --mdc-slider-inactive-track-color: #174220;
+    --mdc-slider-with-tick-marks-active-container-color: #174220;
+    --mdc-slider-with-tick-marks-inactive-container-color: #174220;
+    --mat-mdc-slider-ripple-color: #174220;
+    --mat-mdc-slider-hover-ripple-color: rgba(23, 66, 32, 0.05);
+    --mat-mdc-slider-focus-ripple-color: rgba(23, 66, 32, 0.2);
+}
+
+.zona , .attivita-type{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-direction: column;
+    border: 1px solid #174220;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    padding: 30px 30px 30px 24px;
+    gap: 5px;
+}
+
+.zona h3{
+    font-size: 27px;
+    font-weight: lighter;
+    display: flex;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    gap: 4px;
+}
+
+.mat-mdc-standard-chip.mat-mdc-chip-selected.mat-primary{
+    --mdc-chip-elevated-container-color: #174220;
+}
+
+.facoltativo{
+    font-size: 15px;
+    font-weight: 100; 
+    font-style: italic
+}
+
+.attivita-type{
+    border-bottom: none;
+    padding-bottom: 50px;
+}
+
+.attivita-type h3{
+    font-size: 27px;
+    font-weight: lighter; 
+}
+
+.mat-mdc-standard-chip.mat-mdc-chip-selected.mat-primary{
+    --mdc-chip-elevated-container-color: #174220;
+}
+
+mat-radio-group{
+    font-family: fantasy;
+    display: flex;
+    flex-wrap: wrap;
+    column-gap: 20px;
+    margin-left: -2%;
+}
+
+mat-radio-button {
+    padding-left: 0px!important;
+}
+
+.mat-mdc-radio-button.mat-accent {
+    --mdc-radio-disabled-selected-icon-color: #000;
+    --mdc-radio-disabled-unselected-icon-color: #000;
+    --mdc-radio-unselected-hover-icon-color: #212121;
+    --mdc-radio-unselected-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-unselected-pressed-icon-color: rgba(0, 0, 0, 0.54);
+    --mdc-radio-selected-focus-icon-color: #174220;
+    --mdc-radio-selected-hover-icon-color: #174220;
+    --mdc-radio-selected-icon-color: #174220;
+    --mdc-radio-selected-pressed-icon-color: #174220;
+    --mat-radio-ripple-color: #000;
+    --mat-radio-checked-ripple-color: #174220;
+    --mat-radio-disabled-label-color: rgba(0, 0, 0, 0.38);
+}
+
+.filter-btn{
+    margin: 20px 0 20px 0;
+    width: 120px;
+    height: 40px;
+    border-radius: 5px;
+    border: 2px solid #044a0d;
+    background-color: #ffff;
+    box-shadow: 4px 4px #044a0d;
+    font-size: 20px;
+    font-family: fantasy;
+    font-weight: 100;
+    color: #044a0d;
+    cursor: pointer;
+}
+
+.filter-btn:active{
+    background-color: #044a0d;
+    color: #fffae6;
+    transform: translate(3px, 3px);
+    box-shadow: 0px 0px #044a0d;
+}

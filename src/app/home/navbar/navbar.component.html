@@ -1,0 +1,54 @@
+<nav [ngStyle]="{ 'background': sideBarOpen ? 'rgba(23, 66, 32, .7)': '#174220'}">
+    <div class="left-nav-box">
+        <img class="img" src="/assets/img/search.png" (click)="onClickOpenInput()" *ngIf="!backHome">
+        <img class="img" src="/assets/img/home.png" *ngIf="backHome" (click)="onClickHome()">
+        <label *ngIf="lentecliccata" [@fadeInOut]>
+            <input type="text" class="search" placeholder="Cerca...">
+        </label>
+    </div>
+
+    <div class="right-nav-box">
+        <img class="img" src="/assets/img/profile.png" (click)="onClickIconProfile($event)" *ngIf="iconProfileOpen">
+    </div>
+
+    <div *ngIf="sideBarOpen" class="side-bar" [@slideInOut]>
+
+        <div class="title-box">
+            <span class="back-arrow" style="padding: 5px;" (click)="onCloseSideBar()">&#10132;</span>   
+
+            <div class="details-box">
+                <span class="user-img">{{ inizialiUtente }}</span>
+                <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">                
+                    <span class="user-details">{{ userLoggedNameLastName }}</span>
+                    <span class="username">{{ userUsername }}</span>
+                </div>
+
+            </div>
+        </div>
+
+
+        <div class="side-bar-content">
+            
+            <div class="side-bar-options">
+                <img class="img-options" src="/assets/img/side-bar-profile.png">
+                <span class="option-name" (click)="onClickMyProfile()">Il mio profilo</span>
+            </div>
+
+            <div class="side-bar-options">
+                <img class="img-options" src="/assets/img/save-icon.png">
+                <span class="option-name">Le mie ricerche</span>
+            </div>
+
+            <div class="side-bar-options">
+                <img class="img-options" src="/assets/img/email.png">
+                <span class="option-name">Contattaci</span>
+            </div>
+
+            <div class="side-bar-options">
+                <img class="img-options" src="/assets/img/logout.png" (click)="onClickLogout()">
+                <span class="option-name" (click)="onClickLogout()">Esci</span>
+            </div>
+        </div>
+
+    </div>
+</nav>
