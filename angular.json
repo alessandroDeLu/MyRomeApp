@@ -26,8 +26,8 @@
               "docs/assets/img"
             ],
             "styles": [
-              "docs/custom-theme.scss",
-              "docs/styles.91af74abc15b4404.css"
+              "src/custom-theme.scss",
+              "src/styles.css"
             ],
             "scripts": []
           },
