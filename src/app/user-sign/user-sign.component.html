@@ -7,7 +7,7 @@
       <div class="wrapper">
          <div class="card-switch">
             <label class="switch">
-               <input type="checkbox" class="toggle" (change)="onReadChecboxSlider($event)">
+               <input type="checkbox"class="toggle" (change)="onReadChecboxSlider($event)">
                <span class="slider"></span>
                <span class="card-side"></span>
                <div class="flip-card__inner">
@@ -33,6 +33,8 @@
                            <asl-google-signin-button type="standard" size="large" width="350" shape="square"></asl-google-signin-button>
                         -->
                      </label>
+
+                     <span style="font-size: 16px;">Non hai un account? <span style="color: #044a0d; font-weight: bolder;">Registrati qui</span></span>
                   </div>
 
                   <div class="flip-card__back">
@@ -53,8 +55,10 @@
                               {{ errorMessageRegister }}
                            </span>
                         </div> 
+                        <span style="font-size: 17px;">Hai gia' un account? <span style="color: #044a0d; font-weight: bolder;">Accedi</span></span>
                      </form>
                   </div>
+                  
                </div>
             </label>
          </div>   
