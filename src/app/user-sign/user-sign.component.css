@@ -243,7 +243,7 @@
 }
 @media screen and (max-width: 768px){
     .form-box{
-        height: 68%;
+        height: 60%;
     }
 
     .error-register{
