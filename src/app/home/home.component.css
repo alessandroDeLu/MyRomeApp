@@ -176,7 +176,7 @@ textarea{
 .mappa-box{
     border: 5px groove #044a0d;
     height: 50%;
-    width: 90%;
+    width: 98%;
     margin-top: 5%;
     border-radius: 59%;
     background-image: url("/assets/img/mappaRoma.jpg");
@@ -198,6 +198,14 @@ textarea{
 
     .center-content{
         gap: 140px;
+    }
+
+}
+
+@media screen and (min-height: 740px){
+
+    .center-content{
+        gap: 7%;
     }
 
 }
