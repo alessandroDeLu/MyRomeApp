@@ -175,9 +175,9 @@ textarea{
 
 .mappa-box{
     border: 5px groove #044a0d;
-    height: 52%;
-    width: 95%;
-    margin-top: 12%;
+    height: 50%;
+    width: 90%;
+    margin-top: 5%;
     border-radius: 59%;
     background-image: url("/assets/img/mappaRoma.jpg");
     background-position: center;
