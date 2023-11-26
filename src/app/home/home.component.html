@@ -47,8 +47,8 @@
         <button type="submit" class="btn" (click)="onSendHelpUsMessage()">Invia</button>
         <span class="error-textarea" *ngIf="textAreaError" [@fadeInOut]>{{ errorMsgTextArea }}</span>
         <span class="message-sended" *ngIf="messageSended" [@fadeInOut]>&#9989; {{ confirmMessage }}</span>
-        <mat-progress-bar mode="indeterminate" *ngIf="caricaInvio"></mat-progress-bar>
     </div>
+    <mat-progress-bar mode="indeterminate" *ngIf="caricaInvio" [@fadeInOut] style="position: absolute; bottom: 0; z-index: 2;"></mat-progress-bar>
  
     <footer-component (mandaDatiEventFromFooter)="onRiceviDatiFromFooter($event)"></footer-component>
 </div>

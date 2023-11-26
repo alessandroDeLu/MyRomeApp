@@ -1,4 +1,4 @@
-import { ChangeDetectionStrategy, Component , OnInit} from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 import { Router } from '@angular/router';
 import { ShareDataService } from '../service/share-data.service';
 import { HttpService } from '../service/http.service';
@@ -8,7 +8,6 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
   selector: 'app-home',
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
   animations: [
     trigger('fadeInOut', [
       state('void', style({ opacity: 0 })),
@@ -125,13 +124,14 @@ export class HomeComponent implements OnInit {
       this.http.inviaMailPerAiutarci(url, helpUsMessage, httpOptions).subscribe((result: any)=> {
 
         if(result && result.hasOwnProperty("Confirm")){
+          this.caricaInvio = false;
           this.messageSended = true;
           this.confirmMessage = result["Confirm"]
-          this.caricaInvio = false;
 
           setTimeout(()=> {
             this.messageSended = false;
           } , 2500)
+
         }else{
           this.textAreaError = true;
           this.errorMsgTextArea = "Attenzione: errore durante l'invio del messaggio";
