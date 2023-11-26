@@ -224,3 +224,30 @@ textarea{
         gap: 35px;
     }
 }
+
+@media screen and (max-height: 894px){
+    .form-help-us{
+        height: 88%;
+    }
+}
+
+@media screen and (max-height: 681px){
+    .form-help-us{
+        height: 100%;
+    }
+
+    .btn{
+        margin-bottom: 30px;
+    }
+
+    textarea{
+        height: 30%;
+    }
+}
+
+@media screen and (max-height: 500px){
+
+    textarea{
+        height: 90%;
+    }
+}
