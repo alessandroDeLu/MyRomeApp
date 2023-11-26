@@ -34,7 +34,7 @@
 .box-city{
     display: flex;
     flex-direction: column;
-    gap: 18px;
+    gap: 4px;
 }
 
 .box-city img{

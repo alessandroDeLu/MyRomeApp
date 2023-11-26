@@ -20,6 +20,7 @@
     border: 1px solid #174220;
     border-radius: 20px;
     background-color: #e6e6e1;
+    overflow-y: auto;
 }
 
 .top-background{
@@ -139,4 +140,38 @@ input{
 .confirm-message{
     color: white;
     bottom: 2px;
+}
+
+@media screen and (min-height: 760px){
+    
+    .container{
+        height: 82%;
+    }
+
+}
+
+@media screen and (min-height: 837px){
+    
+    .container{
+        height: 76%;
+    }
+
+}
+
+@media screen and (max-height: 740px){
+
+    .box-profile{
+        margin-top: 10%;
+        height: 86%;
+    }
+
+}
+
+@media screen and (max-height: 598px) {
+
+    .box-profile{
+        margin-top: 2%;
+        height: 94%;
+    }
+    
 }
