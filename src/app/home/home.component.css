@@ -10,6 +10,7 @@
     justify-content: flex-start;
     flex-direction: column;
     height: 86%;
+    overflow-y: auto;
 }
 
 .center-content h1 , .form-help-us h1{
@@ -245,9 +246,42 @@ textarea{
     }
 }
 
+@media screen and (max-height: 641px){
+
+    .center-content h1 , .center-content span{
+        font-size: 27px;
+    }
+
+    .box-city img{
+        width: 110px;
+    }
+}
+
+@media screen and (max-height: 555px){
+
+    .center-content h1 , .center-content span{
+        font-size: 25px!important;
+    }
+
+    .box-city img{
+        width: 90px;
+    }
+}
+
 @media screen and (max-height: 500px){
 
     textarea{
         height: 90%;
+    }
+}
+
+@media screen and (max-height: 490px){
+
+    .center-content h1 , .center-content span{
+        font-size: 20px!important;
+    }
+
+    .box-city img{
+        width: 70px;
     }
 }
