@@ -44,11 +44,11 @@
                         <input [ngStyle]="{ 'border-color': borderLastNameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLastNameError}"  class="flip-card__input" placeholder="Cognome" type="text" autocomplete="off" (change)="onReadCognome($event)">
                         <input [ngStyle]="{ 'border-color': borderAgeError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderAgeError}"  class="flip-card__input" placeholder="Età" type="number" autocomplete="off"  (change)="onReadEta($event)">
                         <input [ngStyle]="{ 'border-color': borderUsernameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderUsernameError}"  class="flip-card__input" placeholder="Username" type="text" autocomplete="off" (change)="onReadUsername($event)">
-                        <span class="error-register" *ngIf="usernameUnvalid">{{ msgUsernameUnvalid }}</span>
+                        <span class="error-register" *ngIf="usernameUnvalid" [@fadeInOut]>{{ msgUsernameUnvalid }}</span>
                         <input [ngStyle]="{ 'border-color': borderMailError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderMailError}"  class="flip-card__input" name="email" placeholder="Email" type="email" autocomplete="off" (change)="onReadRegisterMail($event)">
-                        <span class="error-register" *ngIf="mailUnvalid">{{ msgMailUnvalid }}</span>
+                        <span class="error-register" *ngIf="mailUnvalid" [@fadeInOut]>{{ msgMailUnvalid }}</span>
                         <input [ngStyle]="{ 'border-color': borderPsswError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderPsswError}"  class="flip-card__input" name="password" placeholder="Password" type="password" autocomplete="off" (change)="onReadRegisterPassword($event)">
-                        <span class="error-register" *ngIf="psswUnvalid">{{ msgPsswUnvalid }}</span>
+                        <span class="error-register" *ngIf="psswUnvalid" [@fadeInOut]>{{ msgPsswUnvalid }}</span>
                         <div class="box-btn">
                            <button class="flip-card__btn" (click)="onClickRegister()">Registrati</button>
                            <span *ngIf="errorRegister" class="error-register" [@fadeInOut]>
