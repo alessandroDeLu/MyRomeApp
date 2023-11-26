@@ -123,15 +123,23 @@ export class HomeComponent implements OnInit {
       this.caricaInvio = true;
 
       this.http.inviaMailPerAiutarci(url, helpUsMessage, httpOptions).subscribe((result: any)=> {
-        
-        this.messageSended = true;
-        this.confirmMessage = result["Confirm"]
-        this.caricaInvio = false;
-        
 
-        setTimeout(()=> {
-          this.messageSended = false;
-        } , 2500)
+        if(result && result.hasOwnProperty("Confirm")){
+          this.messageSended = true;
+          this.confirmMessage = result["Confirm"]
+          this.caricaInvio = false;
+
+          setTimeout(()=> {
+            this.messageSended = false;
+          } , 2500)
+        }else{
+          this.textAreaError = true;
+          this.errorMsgTextArea = "Attenzione: errore durante l'invio del messaggio";
+
+          setTimeout(()=>{
+            this.textAreaError = false;
+          } , 2500)
+        }
 
       })
 

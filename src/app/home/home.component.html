@@ -1,4 +1,4 @@
-<div class="container" [ngStyle]="{ 'background': sideBarOpened ? 'rgba(255, 250, 230, .7)': '#fffae6'}" [@fadeInOut]>    
+<div class="container" [ngStyle]="{ 'background': sideBarOpened ? 'rgba(255, 250, 230, .7)': '#fffae6' , 'overflow-y': helpUs ? 'auto' : 'hidden'}" [@fadeInOut]>    
     <navbar-component (mandaDatiEventFromNavbar)="onRiceviDatiFromNavbar($event)"></navbar-component>
 
 
