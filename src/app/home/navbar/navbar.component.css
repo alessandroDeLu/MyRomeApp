@@ -159,3 +159,11 @@ label{
     }
     
 }
+
+@media screen and (max-height: 630px) {
+
+    .side-bar{
+        
+    }
+    
+}
