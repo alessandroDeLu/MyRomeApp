@@ -3,7 +3,7 @@
 </div>
 
 <div class="container" [@fadeInOut]>
-   <div class="form-box" *ngIf="!startAnimation">
+   <div *ngIf="!startAnimation" [ngClass]="{'login-height' : !registerChecked , 'register-height' : registerChecked}">
       <div class="wrapper">
          <div class="card-switch">
             <label class="switch">
@@ -12,14 +12,14 @@
                <span class="card-side"></span>
                <div class="flip-card__inner">
 
-                  <div class="flip-card__front">
+                  <div class="flip-card__front" [@fadeInOut]>
                      <div class="title">Login</div>
                      <form class="flip-card__form" action="">
 
                         <input [ngStyle]="{ 'border-color': borderLogMailError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLogMailError}"  class="flip-card__input" name="email" placeholder="Email" type="email" autocomplete="off" (change)="onReadMailLogin($event)">
-                        <input [ngStyle]="{ 'border-color': borderLogPsswError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLogPsswError}"  class="flip-card__input" name="password" placeholder="Password" type="password" autocomplete="off" (change)="onReadPasswordLogin($event)">                         
+                        <input [ngStyle]="{ 'border-color': borderLogPsswError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLogPsswError}"  class="flip-card__input" name="password" placeholder="Password" type="password" autocomplete="off" (change)="onReadPasswordLogin($event)">   
+                        <span class="login-error" *ngIf="errorLogin" [@fadeInOut]>{{ errorMsgLogin }}</span>                      
                         <button class="flip-card__btn" (click)="onClickLogin()">Entra</button>
-                        <span class="login-error" *ngIf="errorLogin" [@fadeInOut]>{{ errorMsgLogin }}</span>
                      </form>
                      <div class="box-hr">
                         <div class="hr"></div>
@@ -37,31 +37,31 @@
                      <span style="font-size: 16px;">Non hai un account? <span style="color: #044a0d; font-weight: bolder;">Registrati qui</span></span>
                   </div>
 
-                  <div class="flip-card__back">
-                     <div class="title">Registrati</div>
+                  <div class="flip-card__back" [@fadeInOut]>
+                     <div class="title register-title">Registrati</div>
                      <form class="flip-card__form" action="">
                         <input [ngStyle]="{ 'border-color': borderNameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderNameError}"  class="flip-card__input" placeholder="Nome" type="text" autocomplete="off" (change)="onReadNome($event)">
                         <input [ngStyle]="{ 'border-color': borderLastNameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderLastNameError}"  class="flip-card__input" placeholder="Cognome" type="text" autocomplete="off" (change)="onReadCognome($event)">
-                        <input [ngStyle]="{ 'border-color': borderAgeError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderAgeError}"  class="flip-card__input" placeholder="Età" type="number" autocomplete="off"  (change)="onReadEta($event)">
-                        <input [ngStyle]="{ 'border-color': borderUsernameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderUsernameError}"  class="flip-card__input" placeholder="Username" type="text" autocomplete="off" (change)="onReadUsername($event)">
-                        <span class="error-register" *ngIf="usernameUnvalid" [@fadeInOut]>{{ msgUsernameUnvalid }}</span>
+                        <div class="box-age-username">
+                           <input [ngStyle]="{ 'border-color': borderAgeError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderAgeError}"  class="flip-card__input" placeholder="Età" type="number" autocomplete="off"  (change)="onReadEta($event)">
+                           <input [ngStyle]="{ 'border-color': borderUsernameError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderUsernameError}"  class="flip-card__input" placeholder="Username" type="text" autocomplete="off" (change)="onReadUsername($event)">
+                        </div>
                         <input [ngStyle]="{ 'border-color': borderMailError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderMailError}"  class="flip-card__input" name="email" placeholder="Email" type="email" autocomplete="off" (change)="onReadRegisterMail($event)">
-                        <span class="error-register" *ngIf="mailUnvalid" [@fadeInOut]>{{ msgMailUnvalid }}</span>
                         <input [ngStyle]="{ 'border-color': borderPsswError ? 'red' : 'grey' }" [ngClass]="{'flip-card__input-error': borderPsswError}"  class="flip-card__input" name="password" placeholder="Password" type="password" autocomplete="off" (change)="onReadRegisterPassword($event)">
-                        <span class="error-register" *ngIf="psswUnvalid" [@fadeInOut]>{{ msgPsswUnvalid }}</span>
                         <div class="box-btn">
-                           <button class="flip-card__btn" (click)="onClickRegister()">Registrati</button>
-                           <span *ngIf="errorRegister" class="error-register" [@fadeInOut]>
-                              {{ errorMessageRegister }}
-                           </span>
+                           <button class="flip-card__btn" (click)="onClickRegister()">Registrati</button> 
+                           <span *ngIf="usernameUnvalid" class="error-register" [@fadeInOut]>{{ msgUsernameUnvalid }}</span>
+                           <span *ngIf="mailUnvalid" class="error-register" [@fadeInOut]>{{ msgMailUnvalid }}</span>
+                           <span *ngIf="psswUnvalid" class="error-register" [@fadeInOut]>{{ msgPsswUnvalid }}</span>
+                           <span *ngIf="errorRegister" class="error-register" [@fadeInOut]>{{ errorMessageRegister }}</span>  
                         </div> 
                         <span style="font-size: 17px;">Hai gia' un account? <span style="color: #044a0d; font-weight: bolder;">Accedi</span></span>
                      </form>
                   </div>
-                  
                </div>
             </label>
          </div>   
       </div>
+      <span *ngIf="registerConfirmed" class="message-confirm" [@fadeInOut]>&#9989; {{ registerMsgConfirmed }}</span>
    </div>
 </div>
