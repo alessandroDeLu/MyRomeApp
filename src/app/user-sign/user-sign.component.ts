@@ -1,4 +1,4 @@
-import { Component , OnInit, DoCheck} from '@angular/core';
+import { Component , OnInit} from '@angular/core';
 
 import { CommonModule } from '@angular/common';
 import { MatIconModule } from '@angular/material/icon';
@@ -53,9 +53,15 @@ export class UserSignComponent implements OnInit {
   
 
   //CHECKBOX LOGIN O REGISTRAZIONE
+  registerChecked = false;
   checkboxElement!: HTMLInputElement;
   onReadChecboxSlider(e: Event){
     this.checkboxElement = e.target as HTMLInputElement;
+    if(this.checkboxElement.checked){
+      this.registerChecked = true;
+    }else{
+      this.registerChecked = false;
+    }
     this.borderNameError = false;
     this.borderLastNameError = false;
     this.borderAgeError = false;
@@ -112,6 +118,8 @@ export class UserSignComponent implements OnInit {
 
   
   //CLICK registrati
+  registerConfirmed = false;
+  registerMsgConfirmed = "";
   errorRegister = false;
   errorMessageRegister = "";
 
@@ -169,7 +177,7 @@ export class UserSignComponent implements OnInit {
       const psswregex = /^(?=.*[A-Z])(?=.*\d)(?=.*[\W_]).{8,}$/;
       const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
 
-      if(!psswregex.test(this.psswDiRegistrazione) || !emailRegex.test(this.mailDiRegistrazione) || this.username.length > 8 ){
+      if(!psswregex.test(this.psswDiRegistrazione) || !emailRegex.test(this.mailDiRegistrazione) || (this.username.length > 8 || this.username.length < 3)){
 
         if(!emailRegex.test(this.mailDiRegistrazione)){
           this.borderMailError = true;
@@ -191,7 +199,7 @@ export class UserSignComponent implements OnInit {
           } , 3000)
         }
 
-        if(this.username.length > 8 && this.username.length < 3){
+        if(this.username.length > 8 || this.username.length < 3){
           this.borderUsernameError = true;
           this.usernameUnvalid = true;
           this.msgUsernameUnvalid = "Attenzione: l'username può contenere massimo 8 caratteri e minimo 3!";
@@ -209,13 +217,13 @@ export class UserSignComponent implements OnInit {
         this.http.registerUser(url, user, httpOptions).subscribe((result: any) => {
           if(result.hasOwnProperty("message")){
           
-            this.snackBar.open("✔ " +  result["message"] , '' ,{
-              duration: 3000
-            });
+            this.registerConfirmed = true;
+            this.registerMsgConfirmed = result["message"];
 
             setTimeout(()=>{
+              this.registerConfirmed = false;
               this.checkboxElement.checked = false;//torno al login
-            } , 3300)
+            } , 3000)
 
           }else {
             this.errorRegister = true;
@@ -223,7 +231,7 @@ export class UserSignComponent implements OnInit {
 
             setTimeout(()=>{
               this.errorRegister = false;
-            } , 3000)
+            } , 30000)
           }
         })
 

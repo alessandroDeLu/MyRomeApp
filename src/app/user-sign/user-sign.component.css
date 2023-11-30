@@ -17,11 +17,15 @@
     background-position-y: -50%;
     background-position-x: 13%;
 }
-.form-box{
+.login-height , .register-height{
     height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+.login-height{
+    height: 74%;
 }
 .wrapper,
 .switch {
@@ -116,7 +120,7 @@
     color: #044a0d;
 }
 .flip-card__input {
-    width: 250px;
+    width: 100%;
     height: 45px;
     border-radius: 5px;
     border: 2px solid gray;
@@ -129,7 +133,7 @@
     outline: none;
 }
 .flip-card__input-error{
-    width: 250px;
+    width: 100%;
     height: 45px;
     border-radius: 5px;
     border: 2px solid gray;;
@@ -141,9 +145,11 @@
     padding: 10px 10px;
     outline: none;
 }
-.box-nome-cognome{
+.box-age-username{
     display: flex;
-    gap: 15px;
+    flex-direction: column;
+    width: 100%;
+    gap: 20px;
 }
 .flip-card__input-error::placeholder {
     color: red!important;
@@ -220,12 +226,25 @@
     left: 9px;
     font-size: 12px;
 }
+
+.message-confirm{
+    color: white;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
 .error-register{
+    bottom: 18%;
+    right: 11%;
+    left: 10%;
+}
+
+.error-register , .message-confirm{
     position: absolute;
-    right: -150px;
-    bottom: 38px;
-    background: rgba(0,0,0,.9);
+    background: rgba(0,0,0,.95);
     padding: 10px;
+    z-index: 2;
     color: red;
     border-radius: 4px;
     font-family: fantasy;
@@ -237,20 +256,15 @@
     padding: 10px;
     color: red;
     border-radius: 4px;
-    bottom: 44%;
+    bottom: 48%;
     font-family: fantasy;
     font-size: 15px;
 }
 @media screen and (max-width: 768px){
-    .form-box{
+    .register-height{
         height: 55%;
     }
 
-    .error-register{
-        right: 34px;
-        bottom: 108px;
-        left: 30px;
-    }
 }
 @media screen and (min-width: 769px){
     .flip-card__front{
@@ -260,4 +274,78 @@
     .flip-card__back{
         width: 345px!important;
     }
+}
+
+@media screen and (max-height: 770px){
+
+    .login-height{
+        height: 73%;
+    }
+
+}
+
+@media screen and (max-height: 702px){
+
+    .register-height{
+        height: 50%;
+    }
+
+}
+
+@media screen and (max-height: 671px){
+
+    .register-title{
+        margin: 0;
+    }
+
+    .register-height{
+        height: 54%;
+    }
+
+    .login-height{
+        height: 63%;
+    }
+
+}
+
+@media screen and (max-height: 616px){
+
+    .box-age-username{
+        display: flex;
+        flex-direction: row;
+        gap: 20px;
+    }
+
+    .register-height{
+        height: 65%;
+    }
+
+}
+
+@media screen and (max-height: 560px){
+
+    .login-height{
+        height: 63%;
+    }
+
+    .flip-card__btn{
+        margin: 0;
+    }
+
+}
+
+@media screen and (max-height: 537px){
+
+    .title{
+        margin: 0;
+    }
+
+    .login-height{
+        height: 76%;
+    }
+
+    .login-error{
+        bottom: 52%;
+    }
+
 }
