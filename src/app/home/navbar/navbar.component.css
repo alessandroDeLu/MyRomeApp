@@ -160,10 +160,14 @@ label{
     
 }
 
-@media screen and (max-height: 630px) {
+@media screen and (max-height: 500px) {
 
     .side-bar{
-        
+        overflow: auto;
+    }
+
+    .side-bar-content{
+        margin-bottom: 30px;
     }
     
 }

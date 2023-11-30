@@ -22,6 +22,7 @@
 
 .form-help-us h1{
     font-size: 28px;
+    margin-top: 24px!important;
 }
 
 .title-home{
@@ -101,11 +102,11 @@ textarea{
 
 .error-textarea{
     position: absolute;
-    background: rgba(0,0,0,.9);
-    padding: 10px;
+    background: rgba(0,0,0,.95);
+    padding: 13px;
     color: red;
     border-radius: 4px;
-    bottom: 120px;
+    bottom: 11%;
     font-size: 17px;
     font-family: fantasy;
 }
@@ -211,10 +212,10 @@ textarea{
 }
 
 
-@media screen and (min-height: 740px){
+@media screen and (min-height: 685px){
 
     .center-content{
-        gap: 13%;
+        gap: 11.5%;
     }
 
 }
@@ -228,7 +229,7 @@ textarea{
 
 @media screen and (max-height: 894px){
     .form-help-us{
-        height: 88%;
+        height: 83%;
     }
 }
 
