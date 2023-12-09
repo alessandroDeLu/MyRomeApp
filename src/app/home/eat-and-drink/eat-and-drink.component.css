@@ -14,7 +14,7 @@ h1,h2,h3,h4{
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    height: 35vh;
+    height: 27vh;
 }
 .title-eat-and-drink h1 {
     font-size: 35px;
@@ -30,13 +30,18 @@ h1,h2,h3,h4{
     justify-content: flex-end;
     padding-right: 10px;
 }
-.emoticon{
-    width: 100%;
+
+.box-subtitle{
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
 }
+
+.box-subtitle img{
+    width: 70%; 
+    transform: translateY(-32%);
+}
+
 .filter{
     display: flex;
     justify-content: flex-start;
@@ -192,4 +197,47 @@ mat-radio-button {
     --mdc-checkbox-unselected-focus-state-layer-color: black;
     --mdc-checkbox-unselected-hover-state-layer-color: black;
     --mdc-checkbox-unselected-pressed-state-layer-color: black;
+}
+
+@media screen and (max-height: 874px) {
+    
+    .title-eat-and-drink{
+        height: 30vh;
+    }
+
+}
+
+@media screen and (max-height: 758px) {
+    
+    .title-eat-and-drink{
+        height: 34vh;
+    }
+
+}
+
+@media screen and (max-height: 670px) {
+    
+    .title-eat-and-drink h1 {
+        font-size: 27px;
+    }    
+
+    .box-subtitle img{
+        width: 58%;
+    }
+
+    .filter h1{
+        font-size: 24px;
+    }
+
+    .budget h3 , .zona h3 , .orario-pasto h3 , .specialita h3 {
+        font-size: 24px;
+    }
+}
+
+@media  screen and (max-height: 570px) {
+
+    .box-subtitle img{
+        transform: translateY(-41%);
+    }
+    
 }
