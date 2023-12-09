@@ -48,6 +48,11 @@ export class HomeComponent implements OnInit {
       if(result && result.hasOwnProperty("message")){
         this.usernameUserLogged = "@" + result["user"].username;
         this.nameUserLogged = result["user"].nome;
+        if(new Date().getHours() >= 14){
+          this.nameUserLogged = "Buonasera " + this.nameUserLogged;
+        }else{
+          this.nameUserLogged = "Buongiorno " + this.nameUserLogged;
+        }
       }
     })
 
