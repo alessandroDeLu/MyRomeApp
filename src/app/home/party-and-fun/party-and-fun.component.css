@@ -12,19 +12,19 @@ h1,h2,h3,h4{
     margin: 0;
 }
 
-.title-eat-and-drink{
+.title-party-and-fun{
     display: flex;
     justify-content: flex-start;
     align-items: center;
     flex-direction: column;
-    height: 35vh;
+    height: 27vh;
 }
 
-.title-eat-and-drink h1 {
+.title-party-and-fun h1 {
     font-size: 35px;
 }
 
-.title-eat-and-drink h2{
+.title-party-and-fun h2{
     font-size: 30px;
 }
 
@@ -37,12 +37,15 @@ h1,h2,h3,h4{
     padding-right: 10px;
 }
 
-.emoticon{
-    width: 100%;
+.box-subtitle{
     display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.box-subtitle img{
+    width: 70%; 
+    transform: translateY(-32%);
 }
 
 .filter{
@@ -192,4 +195,47 @@ mat-radio-button {
     color: #fffae6;
     transform: translate(3px, 3px);
     box-shadow: 0px 0px #044a0d;
+}
+
+@media screen and (max-height: 874px) {
+    
+    .title-party-and-fun{
+        height: 30vh;
+    }
+
+}
+
+@media screen and (max-height: 758px) {
+    
+    .title-party-and-fun{
+        height: 34vh;
+    }
+
+}
+
+@media screen and (max-height: 670px) {
+    
+    .title-party-and-fun h1 {
+        font-size: 27px;
+    }    
+
+    .box-subtitle img{
+        width: 58%;
+    }
+
+    .filter h1{
+        font-size: 24px;
+    }
+
+    .budget h3 , .zona h3 , .attivita-type h3 {
+        font-size: 24px;
+    }
+}
+
+@media  screen and (max-height: 570px) {
+
+    .box-subtitle img{
+        transform: translateY(-41%);
+    }
+    
 }
