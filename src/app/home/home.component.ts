@@ -69,7 +69,6 @@ export class HomeComponent implements OnInit {
       }
     })
     
-
     //TORNO DAL EAT AND DRINK COMPONENT
     this.shareDataService.cosaFare$.subscribe(value => {
       this.cosaFare = value
