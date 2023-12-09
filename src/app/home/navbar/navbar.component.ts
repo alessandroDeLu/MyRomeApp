@@ -79,7 +79,7 @@ export class NavbarComponent implements OnInit {
         this.userLoggedNameLastName = this.userLoggedDetails.nome + " " + this.userLoggedDetails.cognome;
         this.userUsername = "@" +  this.userLoggedDetails.username;
         this.myUsername = this.userLoggedDetails.username;
-        this.inizialiUtente = (this.userLoggedDetails.nome[0] + (this.userLoggedDetails.cognome.includes(" ") ? this.userLoggedDetails.cognome.split(" ").map((word: any[]) => word[0]).join('') : ""));      
+        this.inizialiUtente = (this.userLoggedDetails.nome[0] + (this.userLoggedDetails.cognome.includes(" ") ? this.userLoggedDetails.cognome.split(" ").map((word: any[]) => word[0]).join('') : this.userLoggedDetails.cognome[0]));      
       }
     })
 
