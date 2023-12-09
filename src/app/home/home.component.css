@@ -11,6 +11,7 @@
     flex-direction: column;
     height: 86%;
     overflow-y: auto;
+    gap: 13%;
 }
 
 .center-content h1 , .form-help-us h1{
@@ -182,16 +183,9 @@ textarea{
     font-weight: 100;
 }
 
-.mappa-box{
-    border: 5px groove #044a0d;
-    height: 50%;
-    width: 98%;
-    margin-top: 5%;
-    border-radius: 59%;
-    background-image: url("/assets/img/mappaRoma.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 114%;
+.mappa-img{
+    width: 80%;
+    margin-top: 18%;
 }
 
 @media screen and (min-width: 769px){
@@ -211,19 +205,14 @@ textarea{
 
 }
 
-
-@media screen and (min-height: 685px){
-
-    .center-content{
-        gap: 11.5%;
-    }
-
-}
-
 @media screen and (min-height: 895px){
     .form-help-us{
         height: 80%;
         gap: 35px;
+    }
+
+    .mappa-img{
+        margin-top: 24%;
     }
 }
 
@@ -231,6 +220,63 @@ textarea{
     .form-help-us{
         height: 83%;
     }
+}
+
+@media screen and (max-height: 819px){
+
+    .mappa-img{
+        width: 75%;
+    }
+
+    .title-cosa-fare{
+        font-size: 33px;
+    }
+
+    .scelta-cosa-fare button{
+        font-size: 24px;
+    }
+
+}
+
+@media screen and (max-height: 800px){
+
+    .center-content{
+        gap: 8%;
+    }
+
+}
+
+@media screen and (max-height: 747px){
+
+    .mappa-img{
+        margin-top: 8%;
+    }
+
+}
+
+@media screen and (max-height: 700px){
+
+    .mappa-img{
+        margin-top: 6%;
+        width: 65%;
+    }
+
+    .title-cosa-fare{
+        font-size: 30px;
+    }
+
+    .scelta-cosa-fare button{
+        font-size: 20px;
+    }
+
+}
+
+@media screen and (max-height: 685px){
+
+    .center-content{
+        gap: 4.5%;
+    }
+
 }
 
 @media screen and (max-height: 681px){
@@ -247,6 +293,39 @@ textarea{
     }
 }
 
+@media screen and (max-height: 660px){
+
+    .mappa-img{
+        width: 63%;
+    }
+
+    .box-cosa-fare{
+        gap: 20px;
+    }
+
+}
+
+@media screen and (max-height: 646px){
+
+    .mappa-img{
+        width: 56%;
+        margin-top: 5%;
+    }
+
+    .box-cosa-fare{
+        gap: 20px;
+    }
+
+    .title-cosa-fare{
+        font-size: 27px;
+    }
+
+    .scelta-cosa-fare button{
+        font-size: 17px;
+    }
+
+}
+
 @media screen and (max-height: 641px){
 
     .center-content h1 , .center-content span{
@@ -255,6 +334,17 @@ textarea{
 
     .box-city img{
         width: 110px;
+    }
+
+    .box-cosa-fare{
+        overflow-y: auto;
+    }
+}
+
+@media screen and (max-height: 560px){
+    .mappa-img{
+        margin-top: 0;
+        width: 50%;
     }
 }
 
@@ -266,6 +356,13 @@ textarea{
 
     .box-city img{
         width: 90px;
+    }
+}
+
+@media screen and (max-height: 500px){
+
+    textarea{
+        height: 90%;
     }
 }
 
