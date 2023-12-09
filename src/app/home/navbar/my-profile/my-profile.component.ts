@@ -55,7 +55,7 @@ export class MyProfileComponent implements OnInit{
       this.user = result["user"];
 
       //prima lettera del nome e la prima lettera dopo uno spazio nel cognome
-      this.inizialiUtente = (this.user.nome[0] + (this.user.cognome.includes(" ") ? this.user.cognome.split(" ").map(word => word[0]).join('') : ""));
+      this.inizialiUtente = (this.user.nome[0] + (this.user.cognome.includes(" ") ? this.user.cognome.split(" ").map(word => word[0]).join('') : this.user.cognome[0]));
 
       this.currentUsername = this.user.username;
       this.myMail = this.user.email;
